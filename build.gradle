@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+group = 'com.example'
+version = '0.0.1'
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+	mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    repositories {
+        mavenCentral()
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+}
+
+ext.springversion = '2.1.3.RELEASE'
