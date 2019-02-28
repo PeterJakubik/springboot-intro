@@ -5,4 +5,5 @@ pluginManagement {
 }
 
 include 'Step 1 - Dependency injection'
-
+include 'Step 2 - JPA'
+include 'Step 3 - REST'
