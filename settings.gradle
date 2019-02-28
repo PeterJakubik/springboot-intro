@@ -4,3 +4,5 @@ pluginManagement {
 	}
 }
 
+include 'Step 1 - Dependency injection'
+

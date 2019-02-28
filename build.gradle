@@ -8,6 +8,12 @@ repositories {
 	mavenCentral()
 }
 
+
+ext{
+	springBootVersion = '2.1.3.RELEASE'
+}
+
+
 subprojects {
     apply plugin: 'java'
 
@@ -24,5 +30,3 @@ subprojects {
         }
     }
 }
-
-ext.springversion = '2.1.3.RELEASE'
