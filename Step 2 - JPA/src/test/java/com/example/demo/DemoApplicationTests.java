@@ -15,11 +15,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(
-		classes = TrackCalculator.class
+		classes = {TrackCalculator.class, TrackRepository.class }
 )
 public class DemoApplicationTests {
 
@@ -34,20 +35,29 @@ public class DemoApplicationTests {
 	/**
 	 * Mock for TrackRepository
 	 */
-	@MockBean
+	@Autowired
 	private TrackRepository trackRepository;
+
+	@Test
+	public void testInsertFind()
+	{
+		var trackId = new TrackId(NID_C,1);
+
+		trackRepository.insert(new Track(trackId, 10, Gradient.Downhill));
+
+		var foundTrack = trackRepository.findById(trackId);
+
+		assertNotNull(foundTrack);
+		assertEquals(trackId, foundTrack.getTrackId());
+		assertEquals(10, foundTrack.getL_sp());
+		assertEquals(Gradient.Downhill, foundTrack.getGradient());
+	}
 
 	@Test
 	public void testTrackCalculator()
 	{
-		var testTracks = List.of(
-				new Track(new TrackId(NID_C,1), 10, Gradient.Downhill),
-				new Track(new TrackId(NID_C,2), 20, Gradient.Downhill)
-		);
-
-		// Mock setup
-		when(trackRepository.getAll())
-				.thenReturn(testTracks);
+		trackRepository.insert(new Track(new TrackId(NID_C,1), 10, Gradient.Downhill));
+		trackRepository.insert(new Track(new TrackId(NID_C,2), 20, Gradient.Downhill));
 
 		int computedLengthOfTestTracks = trackCalculator.computeAllTrackLengths();
 
