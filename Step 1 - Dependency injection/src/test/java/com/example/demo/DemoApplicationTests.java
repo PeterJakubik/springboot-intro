@@ -25,15 +25,17 @@ public class DemoApplicationTests {
 
 	private static short NID_C = 23;
 
+	/**
+	 * Inject TrackCalculator
+	 */
 	@Autowired
 	private TrackCalculator trackCalculator;
 
+	/**
+	 * Mock for TrackRepository
+	 */
 	@MockBean
 	private TrackRepository trackRepository;
-
-	@Test
-	public void contextLoads() {
-	}
 
 	@Test
 	public void testTrackCalculator()
