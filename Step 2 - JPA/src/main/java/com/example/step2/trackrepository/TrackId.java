@@ -1,12 +1,8 @@
-package com.example.demo.trackrepository.model;
+package com.example.step2.trackrepository;
 
-import javax.persistence.Embeddable;
-import java.io.Serializable;
 import java.util.Objects;
 
-@Embeddable
-public class TrackId implements Serializable  {
-
+public class TrackId {
 
     private short nid_c;
 

@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.example.step1;
 
-import com.example.demo.trackcalculator.TrackCalculator;
-import com.example.demo.trackrepository.TrackRepository;
+import com.example.step1.trackcalculator.TrackCalculator;
+import com.example.step1.trackrepository.TrackRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

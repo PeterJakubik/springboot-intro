@@ -1,4 +1,4 @@
-package com.example.demo.trackrepository;
+package com.example.step1.trackrepository;
 
 import org.springframework.stereotype.Component;
 

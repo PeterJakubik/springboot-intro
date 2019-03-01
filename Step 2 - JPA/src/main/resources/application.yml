@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: create
+      #      ddl-auto: update
+      show-sql: true
+  datasource:
+    platform: mariadb
+    url: jdbc:mysql://localhost:3306/trackdb
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+    maxActive: 50
+    maxIdle: 20
+
+
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+logging.level.org.hibernate.type: TRACE

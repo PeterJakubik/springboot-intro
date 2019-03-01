@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.example.step1;
 
-import com.example.demo.trackcalculator.TrackCalculator;
-import com.example.demo.trackrepository.Gradient;
-import com.example.demo.trackrepository.Track;
-import com.example.demo.trackrepository.TrackId;
-import com.example.demo.trackrepository.TrackRepository;
+import com.example.step1.trackcalculator.TrackCalculator;
+import com.example.step1.trackrepository.Gradient;
+import com.example.step1.trackrepository.Track;
+import com.example.step1.trackrepository.TrackId;
+import com.example.step1.trackrepository.TrackRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest(
 		classes = TrackCalculator.class
 )
-public class DemoApplicationTests {
+public class TestWithMock {
 
 	private static short NID_C = 23;
 

@@ -1,6 +1,6 @@
-package com.example.demo.trackcalculator;
+package com.example.step1.trackcalculator;
 
-import com.example.demo.trackrepository.TrackRepository;
+import com.example.step1.trackrepository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

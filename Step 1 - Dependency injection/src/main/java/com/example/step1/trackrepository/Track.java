@@ -1,12 +1,5 @@
-package com.example.demo.trackrepository.model;
+package com.example.step1.trackrepository;
 
-import com.example.demo.trackrepository.Gradient;
-
-import javax.persistence.Entity;
-import java.util.Objects;
-
-
-@Entity
 public class Track {
 
     /**
@@ -55,26 +48,5 @@ public class Track {
 
     public void setGradient(Gradient gradient) {
         this.gradient = gradient;
-    }
-
-    public com.example.demo.trackrepository.Track toTrack()
-    {
-        return new com.example.demo.trackrepository.Track(
-                new com.example.demo.trackrepository.TrackId(this.trackId.getNid_c(), this.trackId.getNid_sp()),
-                l_sp,
-                gradient
-        );
-    }
-
-    public static Track fromTrack(com.example.demo.trackrepository.Track track)
-    {
-        Objects.requireNonNull(track);
-        Objects.requireNonNull(track.getTrackId());
-
-        return new Track(
-                new TrackId(track.getTrackId().getNid_c(), track.getTrackId().getNid_sp()),
-                track.getL_sp(),
-                track.getGradient()
-        );
     }
 }

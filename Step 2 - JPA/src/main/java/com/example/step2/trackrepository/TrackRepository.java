@@ -1,16 +1,14 @@
-package com.example.demo.trackrepository;
+package com.example.step2.trackrepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Propagation;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,12 +26,12 @@ public class TrackRepository {
     @Transactional(Transactional.TxType.REQUIRED)
     public Collection<Track>  getAll()
     {
-        Query qry = entityManager.createQuery(String.format("SELECT t FROM %s t", com.example.demo.trackrepository.model.Track.class.getSimpleName()));
+        Query qry = entityManager.createQuery(String.format("SELECT t FROM %s t", com.example.step2.trackrepository.model.Track.class.getSimpleName()));
 
-        var dbList = (List<com.example.demo.trackrepository.model.Track>)qry.getResultList();
+        var dbList = (List<com.example.step2.trackrepository.model.Track>)qry.getResultList();
 
         return dbList.stream()
-                .map(com.example.demo.trackrepository.model.Track::toTrack)
+                .map(com.example.step2.trackrepository.model.Track::toTrack)
                 .collect(Collectors.toList());
     }
 
@@ -45,9 +43,9 @@ public class TrackRepository {
     @Transactional(Transactional.TxType.REQUIRED)
     public Track findById(TrackId trackId)
     {
-        var primaryKey = new com.example.demo.trackrepository.model.TrackId(trackId.getNid_c(), trackId.getNid_sp());
+        var primaryKey = new com.example.step2.trackrepository.model.TrackId(trackId.getNid_c(), trackId.getNid_sp());
 
-        var foundTrack = entityManager.find(com.example.demo.trackrepository.model.Track.class, primaryKey );
+        var foundTrack = entityManager.find(com.example.step2.trackrepository.model.Track.class, primaryKey );
 
         if(foundTrack != null)
         {
@@ -64,7 +62,7 @@ public class TrackRepository {
     @Transactional(Transactional.TxType.REQUIRED)
     public void insert(Track track)
     {
-        var newTrack = com.example.demo.trackrepository.model.Track.fromTrack(track);
+        var newTrack = com.example.step2.trackrepository.model.Track.fromTrack(track);
 
         entityManager.persist(newTrack);
     }
@@ -75,7 +73,7 @@ public class TrackRepository {
     @Transactional(Transactional.TxType.REQUIRED)
     public void removeAll()
     {
-        Query qry = entityManager.createQuery(String.format("DELETE t FROM %s t", com.example.demo.trackrepository.model.Track.class.getSimpleName()));
+        Query qry = entityManager.createQuery(String.format("DELETE t FROM %s t", com.example.step2.trackrepository.model.Track.class.getSimpleName()));
 
         int rowsDeleted = qry.executeUpdate();
 
