@@ -35,7 +35,7 @@ public class TestWithRepository {
 	private TrackCalculator trackCalculator;
 
 	/**
-	 * Mock for TrackRepository
+	 * Inject TrackRepository
 	 */
 	@Autowired
 	private TrackRepository trackRepository;
