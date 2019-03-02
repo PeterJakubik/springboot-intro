@@ -12,10 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 				com.example.step2.trackrepository.model.Track.class
 		}
 )
-public class DemoApplication {
+public class ApplicationStep2 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ApplicationStep2.class, args);
 	}
 
 }

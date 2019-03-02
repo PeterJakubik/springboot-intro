@@ -2,7 +2,7 @@
 Spring boot 2 introduction with Gradle and Java 11
 
 ## Úvod do Spring boot 2 (s použitím Gradle a Java 11)
-Jednoduchý úvod do Spring boot s použitím Gradlu (builder) a Java 11
+Jednoduchý úvod do Spring boot s použitím Gradlu a Java 11
 
 Projekt je rozdelený na kroky, pričom každý krok je už výsledná aplikácia
 
@@ -16,23 +16,33 @@ V hlavnom adresáry v súbore _gradle.properties_ je nutné zadať cestu k jave
 org.gradle.java.home=c:/Program Files/Java/jdk-11.0.2
 ```
 
-Keďže v hlavnom adresári je gradle, tak každý podadresár dedí všetky gradle nastavenia. V každom kroku je len vlastný súbor _build.gradle_ ktorý špecifikuje, aké časti spring frameworku sa budu využívať.
+Keďže v hlavnom adresári je gradle (a v settings.gradle je include subprojektov), tak každý podadresár dedí všetky gradle nastavenia. V každom kroku je len vlastný súbor _build.gradle_ ktorý špecifikuje, aké časti spring frameworku sa budu využívať.
 
-Každý krok sa dá skompilovať z príkazového riadku pomocou ```gradlew build```
+Celý projekt sa dá skompilovať z príkazového riadku pomocou ```gradlew build```
+
+Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu mariadb. V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa zadávajú v súbore application.yml)
+
+Pre projekt [Step 3 - REST] je potrebné nainštalovať aplikáciu Postman na posielanie REST Requestov
 
 ## Popis projektu
 Jedná sa o projekt, ktorý bude demonštrovať spring-boot na jednoduchej aplikácii.
 
-Aplikácia sa volá TrackManagement a mala by mať na starosti spravovanie koľají (naozaj železničných koľají :-) )
+Aplikácia by mala mať na starosti spravovanie koľají (naozaj železničných koľají :-) ).
+Jednotlivé kroky na seba nadväzujú
+
+* [Step 1 - Dependency injection] Dve Komponenty _TrackCalculator_ a _TrackRepository_ demonštrujú použitie anotácie ```Component``` a ako sa dá izolovane otestovať jedna Komponente pomocou MockBean
+* [Step 2 - JPA] Komponenta _TrackRepository_ bude zapisovať do Databázy pomocou JPA
+* [Step 3 - REST] Nová komponenta _TrackRepositoryController_ bude sprístupňovať REST Api a použiva _TrackRepository_
+
 
 Každá koľaj je jednoznačne identifikovateľná pomocou dvoch číselných (_integer_) parametrov.
 
-Koľaj
+_TrackId_
 
 | Typ      | Meno Premennej | Význam |
 |----------|----------------|--------|
-| short    | NID_C          | Verzia projektovania. Pri každej zmene (napr. dĺžky koľaje sa musí zmeniť aj táto verzia) |
-| integer  | NID_SP         | Číselná identifikácia koľaje |
+| short    | nid_c          | Verzia projektovania. Pri každej zmene (napr. dĺžky koľaje sa musí zmeniť aj táto verzia) |
+| integer  | nid_sp         | Číselná identifikácia koľaje |
 
 
 ## Poznámka

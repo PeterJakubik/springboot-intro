@@ -15,10 +15,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 				TrackRepositoryController.class
 		}
 )
-public class DemoApplication {
+public class ApplicationStep3 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ApplicationStep3.class, args);
 	}
 
 }
