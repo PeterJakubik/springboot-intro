@@ -20,9 +20,9 @@ Keďže v hlavnom adresári je gradle (a v settings.gradle je include subprojekt
 
 Celý projekt sa dá skompilovať z príkazového riadku pomocou ```gradlew build``` (skompiluje celý projekt s spustí všetky testy)
 
-Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu mariadb. V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa v springboot zadávajú v resource súbore application.yml)
+Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu [mariadb](https://mariadb.org/). V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa v springboot zadávajú v resource súbore application.yml)
 
-Pre projekt [Step 3 - REST] je potrebné nainštalovať aplikáciu Postman na posielanie REST Requestov
+Pre projekt [Step 3 - REST] je potrebné nainštalovať aplikáciu [postman](https://www.getpostman.com/) na posielanie REST Requestov
 
 ## Popis projektu
 Jedná sa o projekt, ktorý bude demonštrovať spring-boot na jednoduchej aplikácii.
