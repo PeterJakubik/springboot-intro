@@ -18,9 +18,9 @@ org.gradle.java.home=c:/Program Files/Java/jdk-11.0.2
 
 Keďže v hlavnom adresári je gradle (a v settings.gradle je include subprojektov), tak každý podadresár dedí všetky gradle nastavenia. V každom kroku je len vlastný súbor _build.gradle_ ktorý špecifikuje, aké časti spring frameworku sa budu využívať.
 
-Celý projekt sa dá skompilovať z príkazového riadku pomocou ```gradlew build```
+Celý projekt sa dá skompilovať z príkazového riadku pomocou ```gradlew build``` (skompiluje celý projekt s spustí všetky testy)
 
-Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu mariadb. V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa zadávajú v súbore application.yml)
+Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu mariadb. V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa v springboot zadávajú v resource súbore application.yml)
 
 Pre projekt [Step 3 - REST] je potrebné nainštalovať aplikáciu Postman na posielanie REST Requestov
 
@@ -30,9 +30,9 @@ Jedná sa o projekt, ktorý bude demonštrovať spring-boot na jednoduchej aplik
 Aplikácia by mala mať na starosti spravovanie koľají (naozaj železničných koľají :-) ).
 Jednotlivé kroky na seba nadväzujú
 
-* [Step 1 - Dependency injection] Dve Komponenty _TrackCalculator_ a _TrackRepository_ demonštrujú použitie anotácie ```Component``` a ako sa dá izolovane otestovať jedna Komponente pomocou MockBean
-* [Step 2 - JPA] Komponenta _TrackRepository_ bude zapisovať do Databázy pomocou JPA
-* [Step 3 - REST] Nová komponenta _TrackRepositoryController_ bude sprístupňovať REST Api a použiva _TrackRepository_ Do postmanu importovať súbor z adresára _postman_
+* [Step 1 - Dependency injection]() Dve Komponenty _TrackCalculator_ a _TrackRepository_ demonštrujú použitie anotácie ```@Component``` a ako sa dá izolovane otestovať jedna Komponente pomocou ```@MockBean```
+* [Step 2 - JPA]() Komponenta _TrackRepository_ bude zapisovať do Databázy pomocou JPA
+* [Step 3 - REST]() Nová komponenta _TrackRepositoryController_ bude sprístupňovať REST Api a použiva _TrackRepository_ Do postmanu importovať súbor z adresára _postman_
 
 
 Každá koľaj je jednoznačne identifikovateľná pomocou dvoch číselných (_integer_) parametrov.
