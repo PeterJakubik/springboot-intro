@@ -32,7 +32,7 @@ Jednotlivé kroky na seba nadväzujú
 
 * [Step 1 - Dependency injection] Dve Komponenty _TrackCalculator_ a _TrackRepository_ demonštrujú použitie anotácie ```Component``` a ako sa dá izolovane otestovať jedna Komponente pomocou MockBean
 * [Step 2 - JPA] Komponenta _TrackRepository_ bude zapisovať do Databázy pomocou JPA
-* [Step 3 - REST] Nová komponenta _TrackRepositoryController_ bude sprístupňovať REST Api a použiva _TrackRepository_
+* [Step 3 - REST] Nová komponenta _TrackRepositoryController_ bude sprístupňovať REST Api a použiva _TrackRepository_ Do postmanu importovať súbor z adresára _postman_
 
 
 Každá koľaj je jednoznačne identifikovateľná pomocou dvoch číselných (_integer_) parametrov.

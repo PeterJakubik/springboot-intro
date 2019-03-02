@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "06b924a4-391a-47a3-a007-6c298aca0046",
+		"name": "Tracks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tracks/find?nid_c=1&nid_sp=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tracks",
+						"find"
+					],
+					"query": [
+						{
+							"key": "nid_c",
+							"value": "1"
+						},
+						{
+							"key": "nid_sp",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findHipsterWay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tracks/find?nid_c=1&nid_sp=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tracks",
+						"find"
+					],
+					"query": [
+						{
+							"key": "nid_c",
+							"value": "1"
+						},
+						{
+							"key": "nid_sp",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeAll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tracks/removeall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tracks",
+						"removeall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"trackId\":{\n\t\t\"nid_c\": 1,\n\t\t\"nid_sp\": 2\n\t},\n\t\"l_sp\": 100,\n\t\"gradient\": Uphill\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tracks/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tracks",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
