@@ -14,7 +14,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,13 +35,17 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = {TrackCalculator.class, TrackRepository.class, TrackRepositoryController.class})
 @AutoConfigureMockMvc
-//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ComponentScan(basePackageClasses = {TrackCalculator.class, TrackRepository.class, TrackRepositoryController.class} )
+@AutoConfigureTestEntityManager
+@EnableAutoConfiguration
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+
 public class TestWithRepository {
 
 	@Autowired
+	WebApplicationContext context;
+
 	private MockMvc mvc;
 
 	private static short NID_C = 23;
@@ -49,7 +55,7 @@ public class TestWithRepository {
 
 	@Before
 	public void setUp() {
-		//this.mvc = MockMvcBuilders.webAppContextSetup(this.context).build();
+		this.mvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 	}
 
 	@Test
