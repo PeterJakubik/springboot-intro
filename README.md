@@ -1,6 +1,6 @@
 # Spring boot 2 introduction with Gradle and Java 11
 
-| Build | Static code coverage |
+| Build | Code quality check |
 | ---   | --- |
 | [![Build Status](https://travis-ci.com/PeterJakubik/springboot-intro.svg?branch=master)](https://travis-ci.com/PeterJakubik/springboot-intro) | [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=PeterJakubik_springboot-intro)](https://sonarcloud.io/dashboard?id=PeterJakubik_springboot-intro) |
 
