@@ -25,6 +25,15 @@ ext{
 
 // Define same rules for all subprojects(subdirectories)
 subprojects {
+    sonarqube {
+        String projectKey = project.name.replaceAll("\\s+","")
+        String sonarModuleKey = rootProject.group + ':' + rootProject.name + ':' + projectKey
+
+        properties {
+            property "sonar.moduleKey", sonarModuleKey
+        }
+    }
+
     apply plugin: 'java'
 
     sourceCompatibility = JavaVersion.VERSION_11
