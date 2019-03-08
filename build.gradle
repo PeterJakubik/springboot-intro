@@ -1,6 +1,15 @@
+// Use SonarQube
+plugins {
+  id "org.sonarqube" version "2.7"
+}
+
+// A Java Project
 apply plugin: 'java'
 
+// Java app version
 version = '0.0.1'
+
+// Used Java Version as Gradle constant
 sourceCompatibility = JavaVersion.VERSION_11
 
 // Load Libraries from maven repository
@@ -14,11 +23,7 @@ ext{
 	mariaDbVersion = '1.5.7'
 }
 
-// Use SonarQube
-plugins {
-  id "org.sonarqube" version "2.7"
-}
-
+// Define same rules for all subprojects(subdirectories)
 subprojects {
     apply plugin: 'java'
 
