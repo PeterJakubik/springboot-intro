@@ -1,4 +1,4 @@
-# springboot-intro
+# springboot-intro [![Build Status](https://travis-ci.com/PeterJakubik/springboot-intro.svg?branch=master)](https://travis-ci.com/PeterJakubik/springboot-intro)
 Spring boot 2 introduction with Gradle and Java 11
 
 ## Úvod do Spring boot 2 (s použitím Gradle a Java 11)
