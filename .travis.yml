@@ -25,6 +25,3 @@ script:
 # Add mariadb  
 addons:
   mariadb: '10.0'
-  
-services:
-  - mariadb
