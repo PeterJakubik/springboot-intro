@@ -1,8 +1,10 @@
-# springboot-intro 
+# springboot-intro Spring boot 2 introduction with Gradle and Java 11
+
 | Build | Static code coverage |
 | ---   | --- |
 | [![Build Status](https://travis-ci.com/PeterJakubik/springboot-intro.svg?branch=master)](https://travis-ci.com/PeterJakubik/springboot-intro) | [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=PeterJakubik_springboot-intro)](https://sonarcloud.io/dashboard?id=PeterJakubik_springboot-intro) |
-Spring boot 2 introduction with Gradle and Java 11
+
+
 
 ## Úvod do Spring boot 2 (s použitím Gradle a Java 11)
 Jednoduchý úvod do Spring boot s použitím Gradlu a Java 11
