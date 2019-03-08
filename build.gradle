@@ -25,6 +25,7 @@ ext{
 
 // Define same rules for all subprojects(subdirectories)
 subprojects {
+    // Replace empty spaces in subproject directories for SonarQube scanner
     sonarqube {
         String projectKey = project.name.replaceAll("\\s+","")
         String sonarModuleKey = rootProject.group + ':' + rootProject.name + ':' + projectKey
