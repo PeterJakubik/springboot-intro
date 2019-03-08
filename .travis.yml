@@ -21,6 +21,7 @@ jdk: openjdk11
 # Use Gradle as builder
 script:
   - ./gradlew build
+  - ./gradlew sonarqube Dsonar.projectKey=PeterJakubik_springboot-intro -Dsonar.organization=peterjakubik-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN} 
   
 # Add mariadb  
 addons:
