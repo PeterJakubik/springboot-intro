@@ -1,16 +1,28 @@
+# Buld Springboot application with Gradle, Open JDK 11 and MariaDB
+# Springboot java application uses file application.yml to connect to Database in this file is defined Datbase name and user&password
+
+
+
 before_install:
+  # Set Gradle builder executable permissions
   - chmod +x gradlew
+  # Create Database 'trackdb' needed by tests
   - mysql -e 'CREATE DATABASE trackdb;'
+  # Set 'root' password for 'root' user as used in project application.yml
   - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('root') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
   - sudo mysql_upgrade -u root -proot
+  # After setting password restart MariaDB
   - sudo service mysql restart
   
 language: java
 install: true
 jdk: openjdk11
+
+# Use Gradle as builder
 script:
-  - ./gradlew build --info
+  - ./gradlew build
   
+# Add mariadb  
 addons:
   mariadb: '10.0'
   
