@@ -1,4 +1,7 @@
 apply plugin: 'java'
+plugins {
+  id "org.sonarqube" version "2.7"
+}
 
 version = '0.0.1'
 sourceCompatibility = JavaVersion.VERSION_11
