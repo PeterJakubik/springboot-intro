@@ -6,7 +6,10 @@ language: java
 install: true
 jdk: openjdk11
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew build
   
 addons:
   mariadb: '10.0'
+  
+services:
+  - mariadb
