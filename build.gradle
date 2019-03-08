@@ -1,21 +1,23 @@
 apply plugin: 'java'
-plugins {
-  id "org.sonarqube" version "2.7"
-}
 
 version = '0.0.1'
 sourceCompatibility = JavaVersion.VERSION_11
 
+// Load Libraries from maven repository
 repositories {
 	mavenCentral()
 }
 
-
+// Globaly define spring boot version and Database Version
 ext{
 	springBootVersion = '2.1.3.RELEASE'
-    mariaDbVersion = '1.5.7'
+	mariaDbVersion = '1.5.7'
 }
 
+// Use SonarQube
+plugins {
+  id "org.sonarqube" version "2.7"
+}
 
 subprojects {
     apply plugin: 'java'
