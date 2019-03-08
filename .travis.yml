@@ -2,4 +2,7 @@ before_install:
   - chmod +x gradlew
   
 language: java
+install: true
 jdk: openjdk11
+script:
+  - ./gradlew build --scan -s
