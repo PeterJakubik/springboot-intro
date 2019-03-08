@@ -49,7 +49,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/tracks/find?nid_c=1&nid_sp=2",
+					"raw": "http://localhost:8080/tracks/findHipsterWay?nid_c=1&nid_sp=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -57,7 +57,7 @@
 					"port": "8080",
 					"path": [
 						"tracks",
-						"find"
+						"findHipsterWay"
 					],
 					"query": [
 						{
@@ -111,7 +111,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"trackId\":{\n\t\t\"nid_c\": 1,\n\t\t\"nid_sp\": 2\n\t},\n\t\"l_sp\": 100,\n\t\"gradient\": Uphill\n}"
+					"raw": "{\n\t\"trackId\":{\n\t\t\"nid_c\": 1,\n\t\t\"nid_sp\": 2\n\t},\n\t\"l_sp\": 100,\n\t\"gradient\": \"Uphill\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/tracks/add",
