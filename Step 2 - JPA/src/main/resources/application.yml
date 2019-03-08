@@ -2,7 +2,7 @@ spring:
   jpa:
     generate-ddl: true
     hibernate:
-      dialect: org.hibernate.dialect.MySQLDialect
+      dialect: org.hibernate.dialect.MariaDB103Dialect
       ddl-auto: create
       #      ddl-auto: update
       show-sql: true
