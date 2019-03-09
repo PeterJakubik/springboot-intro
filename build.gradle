@@ -19,7 +19,7 @@ repositories {
 
 // Globaly define spring boot version and Database Version
 ext{
-	springBootVersion = '2.1.3.RELEASE'
+	springBootVersion = '2.1.2.RELEASE'
 	mariaDbVersion = '1.5.7'
 }
 
@@ -43,7 +43,7 @@ subprojects {
     repositories {
         mavenCentral()
     }
-
+	
     buildscript {
         repositories {
             mavenCentral()

@@ -24,6 +24,7 @@ org.gradle.java.home=c:/Program Files/Java/jdk-11.0.2
 Keďže v hlavnom adresári je gradle (a v settings.gradle je include subprojektov), tak každý podadresár dedí všetky gradle nastavenia. V každom kroku je len vlastný súbor _build.gradle_ ktorý špecifikuje, aké časti spring frameworku sa budu využívať.
 
 Celý projekt sa dá skompilovať z príkazového riadku pomocou ```gradlew build``` (skompiluje celý projekt s spustí všetky testy)
+Jednotlivé projekty sa dajú spustiť pomocou ```gradlew bootRun```. Spustiť program má zmysel len pre Step3 ktorý spustí lokálny Tomcat (embedded) server a čaká na REST Requesty. Step1 a Step2 sa po spustení hneď ukončia.
 
 Pre projekt [Step 2 - JPA] je potrebné nainštalovať Databázu [mariadb](https://mariadb.org/). V Databáze treba zadať heslo 'root' pre užívateľa  'root' (meno a heslo do databázy sa v springboot zadávajú v resource súbore application.yml)
 

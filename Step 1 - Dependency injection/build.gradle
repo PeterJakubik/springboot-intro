@@ -3,11 +3,16 @@ plugins {
 	id 'java'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
 group = 'com.example.step1'
 
 dependencies {
-	implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
-	testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+	// Use Spring boot BOM
+	implementation platform ("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+	
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    mainClassName = 'com.example.step1.ApplicationStep1'
 }
